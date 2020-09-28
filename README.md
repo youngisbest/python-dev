@@ -42,4 +42,12 @@ ChromeDriver 85.0.4183.87 (cd6713ebf92fa1cacc0f1a598df280093af0c5d7-refs/branch-
 
 ![](images/pythondocker1.png)
 
+## 配置pip镜像
 
+创建container并进入之后，执行下面这个命令，可以将pip的镜像设置成阿里的源
+
+```
+pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
+```
+
+后面的地址可以换成其它镜像源

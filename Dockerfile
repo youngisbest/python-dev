@@ -9,6 +9,7 @@ RUN apt-get update \
  && apt-get install -y \
     vim \
     zip \
+    openssh-server \
     python3 \
     python3-pip \
     libxss1 \
@@ -39,7 +40,8 @@ RUN apt-get update \
  && dpkg -i /root/google-chrome-stable_current_amd64.deb \
  && update-alternatives --install /usr/bin/python python /usr/bin/python3 1 \
  && update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1 \
- && pip install selenium bs4 pyquery requests -i https://mirrors.aliyun.com/pypi/simple/ \
+ && pip install selenium bs4 pyquery requests virtualenv -i https://mirrors.aliyun.com/pypi/simple/ \
+ && /etc/init.d/ssh start \
  && rm /root/google-chrome-stable_current_amd64.deb \
  && rm -rf /var/lib/apt/lists
   
